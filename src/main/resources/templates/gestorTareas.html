@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestor de Tareas</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    #lista li { margin: 6px 0; }
+    button { margin-left: 10px; }
+  </style>
+</head>
+<body>
+
+<ul id="listaOriginal" style="display:none">
+    <li th:each="t : ${tareas}"
+        th:text="${t.tarea}"
+        th:data-realizada="${t.realizada}">
+    </li>
+</ul>
+
+
+  <h1>Gestor de tareas</h1>
+
+  <input id="tarea" type="text" placeholder="Nueva tarea">
+  <button id="agregar">Añadir</button>
+
+<h4>Lista de tareas pendientes</h4>
+  <ul id="lista"></ul>
+
+<h4>Lista de tareas terminadas</h4>
+  <ul id="listaRealizadas"></ul>
+  
+<form method="post" action="#" th:action="@{/gestor/guardarTareas}" id="formulario"> 					
+		<input type="hidden" id="listadoTareas" name="listadoTareas"/></p>
+		<input type="hidden" id="listadoRealizadas" name="listadoRealizadas"/></p>
+		<p><input type="submit" value="Guardar" id="botonFormulario"/></p>
+		
+</form>
+
+
+  <script src="/script.js"></script>
+</body>
+</html>
