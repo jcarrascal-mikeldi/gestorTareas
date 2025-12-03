@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de la compra</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    #lista li { margin: 6px 0; }
+    button { margin-left: 10px; }
+  </style>
+</head>
+<body>
+	<h2>Bienvenido a la lista de la compra</h2>
+	<input type="text" id="producto">
+	<input type="number" id="cantidad" >
+	<button id="aniadir">Añadir</button>
+	
+	<ul id="lista">
+	</ul>
+	
+	<form method="post" action="#" th:action="@{/lista/imprimir}" id="formulario"> 					
+		<input type="hidden" id="listado" name="listado"/>
+		<p><input type="submit" value="Imprimir" id="botonFormulario"/></p>
+	</form>
+	
+	
+  	<script src="/scriptCompra.js"></script>
+</body>
+</html>

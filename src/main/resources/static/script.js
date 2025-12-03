@@ -1,6 +1,6 @@
 // Array que guarda todas las tareas
 let tareas = [];
-let tareasRealizadas = [];
+
 
 // Selecciones del DOM
 const input = document.querySelector("#tarea");
